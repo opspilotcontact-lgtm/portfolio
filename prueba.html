@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juan Ortiz · Portfolio</title>
+<meta name="description" content="Juan Ortiz Romero, Córdoba. Gestión, automatización y digitalización: sistemas internos, productos en producción y webs de cliente, recorridos como una obra.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2316212B'/%3E%3Cpath d='M8 18l8-9 8 9M9 18v8M23 18v8' stroke='%23F1F0EB' stroke-width='2.4' fill='none'/%3E%3Cpath d='M4 18h24' stroke='%23E2571E' stroke-width='2.4'/%3E%3C/svg%3E">
+<style>
+:root{
+  --papel:#F1F0EB; --papel2:#E5E3DA; --tinta:#16212B; --tinta2:#3A4651; --gris:#6B7580; --linea:#B9BEC2;
+  --naranja:#E2571E; --naranja-txt:#B53A0C;
+  --sotano:#0A1016; --sotano2:#111B24; --sotano-linea:#22323F; --luz:#FFB27A; --verde:#4ADE80;
+  --curva:cubic-bezier(.2,.7,.2,1);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--papel:#151D24;--papel2:#1D2730;--tinta:#ECEAE3;--tinta2:#C3C7CB;--gris:#97A0A8;--linea:#3A4652;--naranja-txt:#F38B5A}
+}
+:root[data-theme="dark"]{--papel:#151D24;--papel2:#1D2730;--tinta:#ECEAE3;--tinta2:#C3C7CB;--gris:#97A0A8;--linea:#3A4652;--naranja-txt:#F38B5A}
+
+/* la calle es de día siempre: es el concepto, no un tema */
+.rasante .dia,.calle,.fachada-intro,.mas{--papel:#F1F0EB;--papel2:#E5E3DA;--tinta:#16212B;--tinta2:#3A4651;--gris:#6B7580;--linea:#B9BEC2;--naranja-txt:#B53A0C}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--sotano);color:var(--tinta);font:400 17px/1.55 Barlow,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* ---------- cabecera y ascensor ---------- */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;pointer-events:none;mix-blend-mode:difference;color:#fff}
+.top a{pointer-events:auto;text-decoration:none;font:700 17px/1 "Barlow Condensed",sans-serif;letter-spacing:.02em}
+.top .cv{border:1.5px solid #fff;padding:7px 13px}
+.top .cv:hover{background:#fff;color:#000}
+@media (max-width:600px){.top{padding:12px 16px}}
+
+.ascensor{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:6px;font:700 13px/1 "Barlow Condensed",sans-serif}
+.ascensor a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#7C8893;transition:color .3s}
+.ascensor a i{display:grid;place-items:center;width:30px;height:30px;border:1.5px solid currentColor;border-radius:50%;font-style:normal;font-size:13px;background:rgba(10,16,22,.35);transition:all .3s var(--curva)}
+.ascensor a span{opacity:0;transform:translateX(-6px);transition:all .3s var(--curva);white-space:nowrap;background:rgba(10,16,22,.75);color:#fff;padding:4px 7px;border-radius:3px}
+.ascensor a.on{color:var(--naranja)}
+.ascensor a.on i{background:var(--naranja);border-color:var(--naranja);color:#fff;box-shadow:0 0 18px rgba(226,87,30,.65)}
+.ascensor a.on span,.ascensor a:hover span{opacity:1;transform:none}
+@media (max-width:900px){
+  .ascensor{top:auto;bottom:14px;left:14px;transform:none;flex-direction:row;background:rgba(10,16,22,.82);backdrop-filter:blur(8px);padding:6px;border-radius:24px}
+  .ascensor a span{display:none}
+  .ascensor a i{width:28px;height:28px}
+}
+
+/* ---------- 0 · portada ---------- */
+.hero{position:relative;min-height:100vh;background:var(--papel);color:var(--tinta);overflow:hidden;
+  background-image:linear-gradient(var(--papel2) 1px,transparent 1px),linear-gradient(90deg,var(--papel2) 1px,transparent 1px);background-size:24px 24px}
+.hero .wrap{min-height:100vh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center;padding-top:80px;padding-bottom:40px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr;align-content:center;gap:24px}}
+.hero .quien{font-size:15px;color:var(--gris);margin:0 0 14px}
+.hero .quien b{color:var(--tinta);font-weight:600}
+.hero h1{font:800 clamp(44px,6.4vw,92px)/.92 "Barlow Condensed",sans-serif;margin:0 0 22px;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--naranja-txt)}
+.hero .lead{font-size:19px;max-width:36ch;color:var(--tinta2);margin:0 0 22px}
+.baja{display:inline-flex;align-items:center;gap:10px;font:700 17px/1 "Barlow Condensed",sans-serif;color:var(--tinta);text-decoration:none}
+.baja svg{width:18px;height:18px;animation:bota 1.6s var(--curva) infinite}
+@keyframes bota{50%{transform:translateY(5px)}}
+.corte{width:100%;height:auto;overflow:visible}
+.corte text{font-family:"Barlow Condensed",sans-serif;fill:var(--tinta)}
+.corte .cota{font-size:13px;fill:var(--gris)}
+.corte .lbl{font-size:15px;font-weight:700}
+.corte .sub{font-size:12px;fill:var(--gris);font-weight:500}
+.corte .caja{fill:var(--papel);stroke:var(--tinta);stroke-width:1.5}
+.corte .muro{fill:none;stroke:var(--tinta);stroke-width:2}
+.corte .ras{stroke:var(--naranja);stroke-width:2.5}
+.corte .fino{stroke:var(--linea);stroke-width:1}
+.corte .ven{fill:none;stroke:var(--tinta);stroke-width:1.4}
+.corte-wrap{will-change:transform}
+.oscuro{position:absolute;inset:0;background:var(--sotano);opacity:0;pointer-events:none}
+.hero .rotulo{position:absolute;left:0;right:0;bottom:14vh;margin:0;text-align:center;color:#fff;font:800 clamp(34px,5.5vw,72px)/1 "Barlow Condensed",sans-serif;opacity:0;pointer-events:none}
+.hero .rotulo small{display:block;font:500 18px/1.4 Barlow,sans-serif;color:#9FB0BD;margin-top:12px}
+
+/* ---------- 1 · sótano ---------- */
+.sotano{position:relative;background:var(--sotano);color:#E6EDF2;--mx:50%;--my:30%}
+.sotano::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(var(--sotano-linea) 1px,transparent 1px),linear-gradient(90deg,var(--sotano-linea) 1px,transparent 1px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='480'%3E%3Cg fill='none' stroke='%23E2571E' stroke-width='2' opacity='.55'%3E%3Cpath d='M0 120h180v140h300M60 0v80h260v400M0 380h120V200h120M400 0v60h80'/%3E%3C/g%3E%3Cg fill='none' stroke='%234ADE80' stroke-width='1.5' opacity='.4'%3E%3Cpath d='M0 300h60v-80h200V40h220M200 480v-60h140V160h140'/%3E%3C/g%3E%3Cg fill='%23E2571E' opacity='.7'%3E%3Ccircle cx='180' cy='120' r='4'/%3E%3Ccircle cx='320' cy='80' r='4'/%3E%3Ccircle cx='120' cy='380' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:48px 48px,48px 48px,480px 480px;
+  -webkit-mask-image:radial-gradient(circle 280px at var(--mx) var(--my),#000 0,rgba(0,0,0,.35) 45%,transparent 100%);
+          mask-image:radial-gradient(circle 280px at var(--mx) var(--my),#000 0,rgba(0,0,0,.35) 45%,transparent 100%)}
+.sotano::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle 440px at var(--mx) var(--my),rgba(255,178,122,.09),transparent 70%)}
+.sotano > *{position:relative;z-index:1}
+.cap{min-height:100vh;display:flex;align-items:center;padding:96px 0}
+.cap .wrap{width:100%}
+.kick{display:flex;align-items:center;gap:10px;font:700 15px/1 "Barlow Condensed",sans-serif;color:var(--naranja);margin:0 0 14px;letter-spacing:.02em}
+.kick svg{width:14px;height:12px}
+.sotano h2{font:800 clamp(40px,6vw,88px)/.92 "Barlow Condensed",sans-serif;margin:0 0 18px;letter-spacing:-.01em}
+.sotano p.l{font-size:19px;color:#A9B8C4;max-width:46ch;margin:0}
+.acot{font:italic 500 15.5px/1.4 Barlow,sans-serif;color:#7C8E9C}
+.acot::before{content:"( "}.acot::after{content:" )"}
+
+.entrada-sotano{min-height:85vh;display:flex;align-items:flex-end;padding:120px 0 40px}
+.entrada-sotano .wrap{width:100%}
+.entrada-sotano h2{font-size:clamp(60px,11vw,170px)}
+.entrada-sotano .acot{margin-top:26px}
+
+/* NotionPilot: tablero */
+.np{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;align-items:center}
+@media (max-width:900px){.np{grid-template-columns:1fr;gap:28px}}
+.cifras{display:flex;gap:32px;margin:26px 0 0;flex-wrap:wrap}
+.cifras div{font:500 14px/1.3 Barlow,sans-serif;color:#8FA1AF}
+.cifras b{display:block;font:800 clamp(48px,6vw,80px)/.9 "Barlow Condensed",sans-serif;color:#fff}
+.regla{margin-top:26px;border-left:3px solid var(--naranja);padding:4px 0 4px 16px;font:600 21px/1.3 "Barlow Condensed",sans-serif;color:#fff;max-width:30ch}
+.tablero{position:relative;background:#0E161E;border:1px solid var(--sotano-linea);border-radius:10px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.tablero .barra{display:flex;align-items:center;gap:8px;margin-bottom:12px;font:600 13px/1 Barlow,sans-serif;color:#8FA1AF}
+.tablero .barra i{width:9px;height:9px;border-radius:50%;background:#2A3A47}
+.tablero .barra b{margin-left:8px;color:#E6EDF2}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cols h4{margin:0 0 8px;font:700 13px/1 "Barlow Condensed",sans-serif;color:#8FA1AF}
+.col{height:370px;background:#0A1118;border-radius:7px}
+.tarjetas{position:absolute;left:14px;right:14px;top:66px;height:370px}
+.tj{position:absolute;left:0;top:0;width:calc(25% - 7.5px);padding:9px 10px;border-radius:6px;background:#17232E;border:1px solid #243543;font:500 12.5px/1.3 Barlow,sans-serif;color:#DCE5EC;will-change:transform;transition:border-color .4s,box-shadow .4s}
+.tj small{display:block;font:600 11px/1 "Barlow Condensed",sans-serif;color:var(--naranja);margin-bottom:4px}
+.tj.v{border-color:rgba(74,222,128,.55);box-shadow:0 0 16px rgba(74,222,128,.18)}
+.tj.v small{color:var(--verde)}
+.tj .st{display:block;margin-top:6px;font:600 10.5px/1 "JetBrains Mono",monospace;color:#8FA1AF}
+.sinfx .tarjetas{position:static;height:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.sinfx .tj{position:static;width:auto}
+.sinfx .cols{display:none}
+
+/* Runner: terminal + tubería */
+.run{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center}
+@media (max-width:900px){.run{grid-template-columns:1fr;gap:28px}}
+.tuberia{position:relative;display:flex;justify-content:space-between;margin:34px 0 8px}
+.tuberia::before,.tuberia .fill{content:"";position:absolute;left:10%;right:10%;top:17px;height:2px;background:var(--sotano-linea)}
+.tuberia .fill{background:var(--naranja);transform-origin:left;transform:scaleX(0);box-shadow:0 0 12px var(--naranja)}
+.sinfx .tuberia .fill{transform:none}
+.nodo{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;width:20%;text-align:center;font:700 13px/1.15 "Barlow Condensed",sans-serif;color:#8FA1AF}
+.nodo i{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--sotano);border:2px solid var(--sotano-linea);transition:all .35s var(--curva)}
+.nodo i svg{width:16px;height:16px}
+.nodo.on,.sinfx .nodo{color:#fff}
+.nodo.on i{border-color:var(--naranja);background:#2A140A;color:var(--luz);box-shadow:0 0 20px rgba(226,87,30,.6)}
+.nodo.humano.on i{border-color:var(--verde);background:#0B2A17;color:var(--verde);box-shadow:0 0 22px rgba(74,222,128,.6)}
+.term{background:#05090D;border:1px solid var(--sotano-linea);border-radius:10px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.term .barra{display:flex;gap:7px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--sotano-linea);font:500 12px/1 "JetBrains Mono",monospace;color:#6E8191}
+.term .barra i{width:10px;height:10px;border-radius:50%;background:#26343F}
+.term .barra span{margin-left:8px}
+.term ol{list-style:none;margin:0;padding:16px 18px 20px;font:400 13.5px/1.8 "JetBrains Mono",monospace;color:#B9C7D2;min-height:310px;overflow-x:auto}
+.term li{white-space:pre}
+.term li b{font-weight:600;color:var(--luz)}
+.term li .ok{color:var(--verde)}
+.term li .vu{color:#F59E0B}
+.term li .g{color:#5E7282}
+.term .cursor{display:inline-block;width:8px;height:15px;background:var(--luz);vertical-align:-2px;animation:parpadea 1s steps(1) infinite}
+@keyframes parpadea{50%{opacity:0}}
+@media (max-width:600px){.term ol{font-size:11.5px}}
+
+/* ERP: hub */
+.erp{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:48px;align-items:center}
+@media (max-width:900px){.erp{grid-template-columns:1fr;gap:20px}.erp .hub{order:2}}
+.hub{width:100%;height:auto;overflow:visible}
+.hub text{font-family:"Barlow Condensed",sans-serif;fill:#DCE5EC;font-size:17px;font-weight:700}
+.hub .s{font-size:12.5px;fill:#7C8E9C;font-weight:500}
+.hub .rad{stroke:#2E4251;stroke-width:1.5;fill:none}
+.hub .rad.on{stroke:var(--naranja)}
+.hub .sat{fill:#0E161E;stroke:#2E4251;stroke-width:1.5}
+.hub .nucleo{fill:#2A140A;stroke:var(--naranja);stroke-width:2.5}
+.hub .pulso{fill:var(--luz)}
+.sello-sec{display:inline-flex;align-items:center;gap:14px;margin-top:22px;padding:12px 16px;border:1px solid #2E4251;border-radius:8px}
+.sello-sec b{font:800 44px/1 "Barlow Condensed",sans-serif;color:#fff}
+.sello-sec span{font-size:14.5px;color:#A9B8C4;max-width:26ch;line-height:1.35}
+
+/* Kit: muro de marcas */
+.kit h2{max-width:14ch}
+.muro{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;margin-top:36px}
+@media (max-width:900px){.muro{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.mc{position:relative;aspect-ratio:1/1.08;border-radius:8px;padding:10px;display:flex;flex-direction:column;justify-content:flex-end;background:var(--a);color:var(--t,#111);font:600 12px/1.15 "Barlow Condensed",sans-serif;will-change:transform}
+.mc b{display:block;font:800 15px/1 "Barlow Condensed",sans-serif;margin-bottom:3px}
+.mc span{opacity:.78}
+.mc.choque::after{content:attr(data-choque);position:absolute;top:8px;left:8px;right:8px;font:700 10.5px/1.2 "JetBrains Mono",monospace;color:#fff;background:#C81E1E;padding:3px 5px;border-radius:3px;opacity:0;transform:translateY(-4px);transition:all .4s var(--curva)}
+.muro.alerta .mc.choque{outline:2px solid #FF4D4D;outline-offset:3px;animation:alerta 1.2s ease-in-out 2}
+.muro.alerta .mc.choque::after,.sinfx .mc.choque::after{opacity:1;transform:none}
+@keyframes alerta{50%{outline-color:transparent}}
+.kit .pie{display:flex;flex-wrap:wrap;gap:16px 40px;align-items:baseline;margin-top:28px}
+.kit .pie a{color:var(--luz);font-weight:600}
+
+/* ---------- 2 · rasante ---------- */
+.rasante{position:relative;height:100vh;background:var(--sotano);overflow:hidden}
+.rasante .linea{position:absolute;left:0;right:0;top:50%;height:3px;margin-top:-1.5px;background:var(--naranja);box-shadow:0 0 24px 4px rgba(226,87,30,.8),0 0 80px 10px rgba(255,178,122,.4);transform:scaleX(0)}
+.rasante .flash{position:absolute;left:50%;top:50%;width:140vw;height:60vh;margin:-30vh 0 0 -70vw;border-radius:50%;background:radial-gradient(closest-side,#fff,rgba(255,236,214,.6) 40%,transparent);opacity:0;pointer-events:none;z-index:2}
+.rasante .dia{position:absolute;inset:0;background:var(--papel);clip-path:inset(50% 0 50% 0);display:grid;place-items:center;text-align:center;color:var(--tinta);padding:0 16px}
+.rasante .dia h2{font:800 clamp(48px,9vw,140px)/.9 "Barlow Condensed",sans-serif;margin:0}
+.rasante .dia .cota{display:block;font:700 18px/1 "Barlow Condensed",sans-serif;color:var(--naranja-txt);margin-bottom:14px}
+.rasante .dia .acot{color:var(--gris);margin-top:16px;display:block}
+.sinfx .rasante{height:auto}
+.sinfx .rasante .linea{transform:none;position:relative;top:auto;margin:0}
+.sinfx .rasante .dia{position:relative;clip-path:none;padding:18vh 16px}
+
+/* ---------- 3 · calle (productos) ---------- */
+.calle{position:relative;background:var(--papel);color:var(--tinta)}
+.prod{min-height:100vh;display:flex;align-items:center;padding:90px 0}
+.sinfx .prod{background:var(--bg);color:var(--fg)}
+.prod .wrap{width:100%;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+@media (max-width:900px){.prod .wrap{grid-template-columns:1fr;gap:24px}}
+.prod .kick{color:var(--ac)}
+.prod .nom{font:800 clamp(52px,7.4vw,112px)/.88 "Barlow Condensed",sans-serif;margin:0 0 14px;letter-spacing:-.015em}
+.prod .que{font:500 19px/1.45 Barlow,sans-serif;margin:0 0 20px;max-width:34ch;opacity:.9}
+.prod .dato b{display:block;font:800 clamp(56px,7vw,96px)/.9 "Barlow Condensed",sans-serif;color:var(--ac)}
+.prod .dato span{font-size:15.5px;opacity:.8;max-width:32ch;display:block;margin-top:4px}
+.prod .stack{font:500 12.5px/1.4 "JetBrains Mono",monospace;opacity:.6;margin-top:20px}
+.prod .ir{display:inline-block;margin-top:16px;font:700 18px/1 "Barlow Condensed",sans-serif;color:var(--ac);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:3px}
+
+/* ventana de navegador con la web dentro */
+.nav{position:relative;border-radius:12px;background:#0b0b0b;box-shadow:0 40px 100px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.25);will-change:transform}
+.nav .bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:#1B1D20;color:#9AA0A6;font:500 12.5px/1 "JetBrains Mono",monospace;border-radius:12px 12px 0 0}
+.nav .bar i{width:10px;height:10px;border-radius:50%;background:#3A3D42}
+.nav .bar .url{margin-left:12px;flex:1;background:#2A2D31;border-radius:6px;padding:6px 10px;color:#D7DBDF;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav .vista{position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff;border-radius:0 0 12px 12px}
+.nav .vista img.larga{position:absolute;left:0;top:0;width:100%;height:auto;will-change:transform}
+.nav .vista iframe{position:absolute;left:0;top:0;width:1440px;height:900px;border:0;transform-origin:0 0;background:#fff}
+.sinfx .nav .vista{overflow-y:auto;-webkit-overflow-scrolling:touch}
+.sinfx .nav .vista img.larga{position:static}
+.pegatina{position:absolute;right:-14px;top:-16px;z-index:3;transform:rotate(4deg);background:#FFE14D;color:#111;font:700 14px/1.15 "Barlow Condensed",sans-serif;padding:8px 11px;box-shadow:0 6px 18px rgba(0,0,0,.3);max-width:180px}
+@media (max-width:600px){.pegatina{right:6px}}
+
+/* ---------- 4 · fachada ---------- */
+.fachada-intro{position:relative;height:100vh;background:var(--papel);color:var(--tinta);overflow:hidden;display:grid;place-items:center}
+.fachada-intro .txt{position:absolute;top:12vh;left:0;right:0;text-align:center;padding:0 16px;z-index:2}
+.fachada-intro .cota{font:700 16px/1 "Barlow Condensed",sans-serif;color:var(--naranja-txt)}
+.fachada-intro h2{font:800 clamp(42px,6.5vw,96px)/.92 "Barlow Condensed",sans-serif;margin:8px 0 10px}
+.fachada-intro .acot{color:var(--gris);max-width:60ch;margin:0 auto}
+.alzado{width:min(1000px,92vw);height:auto;margin-top:22vh;will-change:transform}
+.alzado .m{fill:none;stroke:var(--tinta);stroke-width:2.5}
+.alzado .w{fill:var(--papel2);stroke:var(--tinta);stroke-width:2;transition:fill .5s}
+.alzado .w.lit{fill:#FFD9A8}
+.cortina{position:absolute;inset:0;background:#59BFC7;opacity:0;pointer-events:none;z-index:3}
+.sinfx .fachada-intro{height:auto;padding:16vh 0 8vh}
+.sinfx .fachada-intro .txt{position:relative;top:auto}
+.sinfx .alzado{margin-top:5vh}
+
+.fachada{position:relative;overflow:hidden}
+.pista{display:flex;flex-direction:column}
+.fx .pista{flex-direction:row;width:max-content;height:100vh}
+.panel{position:relative;min-height:100vh;width:100%;background:var(--bg);color:var(--fg);display:flex;align-items:center;overflow:hidden}
+.fx .panel{width:100vw;height:100vh;flex:none}
+.panel .in{position:relative;width:100%;max-width:1320px;margin:0 auto;padding:80px 40px 60px 96px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+@media (max-width:900px){.panel .in{grid-template-columns:1fr;gap:22px;padding:72px 16px 64px}}
+.panel .glow{position:absolute;width:70vw;height:70vw;border-radius:50%;right:-20vw;top:-25vw;background:radial-gradient(closest-side,var(--glow),transparent);opacity:.55;pointer-events:none;will-change:transform}
+.panel .n{font:800 clamp(80px,12vw,190px)/.8 "Barlow Condensed",sans-serif;color:var(--ac);opacity:.9;margin:0 0 6px;letter-spacing:-.03em}
+.panel h3{font:800 clamp(36px,4.4vw,64px)/.92 "Barlow Condensed",sans-serif;margin:0 0 6px}
+.panel .sec{font:600 15px/1.3 Barlow,sans-serif;opacity:.75;margin:0 0 22px}
+.panel .idea{font:600 clamp(19px,1.6vw,23px)/1.35 Barlow,sans-serif;margin:0 0 22px;max-width:34ch}
+.panel .meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.5px solid currentColor;padding:7px 10px;font:700 13px/1 "Barlow Condensed",sans-serif;border-radius:4px;color:inherit}
+.lh{display:inline-flex;gap:6px}
+.lh i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:2.5px solid #0CCE6B;font:700 11.5px/1 "JetBrains Mono",monospace;font-style:normal;background:rgba(12,206,107,.14)}
+.vivo{appearance:none;cursor:pointer;margin-top:24px;display:inline-flex;align-items:center;gap:10px;background:var(--fg);color:var(--bg);border:0;padding:13px 18px;font:700 17px/1 "Barlow Condensed",sans-serif}
+.vivo:hover{opacity:.88}
+.vivo .pt{width:9px;height:9px;border-radius:50%;background:#FF3B3B;animation:latido 1.6s infinite}
+@keyframes latido{0%{box-shadow:0 0 0 0 rgba(255,59,59,.7)}70%{box-shadow:0 0 0 10px rgba(255,59,59,0)}100%{box-shadow:0 0 0 0 rgba(255,59,59,0)}}
+.panel .abrir{display:inline-block;margin:24px 0 0 14px;font:700 15px/1 "Barlow Condensed",sans-serif;color:inherit;opacity:.8}
+.panel .nota4{margin:14px 0 0;font:italic 500 15px/1.4 Barlow,sans-serif;opacity:.8;min-height:1.4em}
+
+.mas{background:var(--papel);color:var(--tinta);padding:110px 0 90px}
+.mas h3{font:800 clamp(34px,4vw,56px)/.95 "Barlow Condensed",sans-serif;margin:0 0 8px}
+.mas .acot{color:var(--gris)}
+.ventanas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin-top:34px}
+@media (max-width:900px){.ventanas{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ventanas{grid-template-columns:1fr}}
+.vt{display:block;text-decoration:none;color:inherit}
+.vt .marco{position:relative;border:2.5px solid var(--tinta);padding:6px;background:var(--papel2);overflow:hidden}
+.vt .marco::before{content:"";position:absolute;left:50%;top:6px;bottom:6px;width:2.5px;margin-left:-1.25px;background:var(--tinta);z-index:2;transition:opacity .4s}
+.vt .marco::after{content:"";position:absolute;left:6px;right:6px;top:6px;bottom:6px;background:linear-gradient(115deg,rgba(255,255,255,.55),rgba(255,255,255,0) 40%);z-index:2;transition:opacity .4s}
+.vt img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%;filter:grayscale(.85) contrast(.9) brightness(.85);transition:filter .5s var(--curva),transform .6s var(--curva)}
+.vt:hover img,.vt:focus-visible img{filter:none;transform:scale(1.04)}
+.vt:hover .marco::before,.vt:hover .marco::after,.vt:focus-visible .marco::before,.vt:focus-visible .marco::after{opacity:0}
+.vt b{display:block;font:700 20px/1.1 "Barlow Condensed",sans-serif;margin-top:12px}
+.vt span{font-size:14.5px;color:var(--tinta2);display:block;margin-top:3px}
+.vt em{font-style:normal;font:700 12.5px/1 "Barlow Condensed",sans-serif;color:var(--naranja-txt);display:block;margin-top:6px}
+
+/* ---------- 5 · cubierta ---------- */
+.cubierta{position:relative;min-height:100vh;overflow:hidden;color:#fff;background:linear-gradient(#0B1A2A 0%,#1E3A5A 45%,#C9744E 86%,#E9A77C 100%);display:flex;flex-direction:column;justify-content:space-between}
+.cubierta .estrellas{position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 32% 8%,#fff,transparent),radial-gradient(1.5px 1.5px at 58% 22%,#fff,transparent),radial-gradient(1px 1px at 76% 12%,#fff,transparent),radial-gradient(1px 1px at 88% 30%,#fff,transparent),radial-gradient(1px 1px at 44% 34%,#fff,transparent),radial-gradient(1.5px 1.5px at 22% 40%,#fff,transparent);opacity:.7}
+.cubierta .wrap{position:relative;padding-top:20vh;text-align:center}
+.cubierta h2{font:800 clamp(48px,8vw,124px)/.9 "Barlow Condensed",sans-serif;margin:0 0 18px}
+.cubierta p{font-size:19px;color:#D7E3EE;max-width:44ch;margin:0 auto 30px}
+.cubierta .bot{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn{display:inline-block;padding:15px 22px;text-decoration:none;font:700 18px/1 "Barlow Condensed",sans-serif;border:2px solid #fff;color:#fff}
+.btn.prim{background:#fff;color:#0B1A2A}
+.btn:hover{background:var(--naranja);border-color:var(--naranja);color:#fff}
+.skyline{position:relative;width:100%;height:auto;display:block;margin-top:8vh}
+.skyline .ed{fill:#0A1016}
+.skyline .w{fill:#1A2733;transition:fill .6s}
+.skyline .w.lit{fill:#FFC98A}
+.sinfx .skyline .w{fill:#FFC98A}
+.cubierta small{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:12.5px;color:#7E8E9B;padding:0 16px}
+
+/* ---------- móvil con efectos (prueba) ---------- */
+.fxm .cols{grid-template-columns:1fr 1fr}
+.fxm .cols > div:nth-child(2),.fxm .cols > div:nth-child(3){display:none}
+.fxm .col,.fxm .tarjetas{height:600px}
+.fxm .tj{width:calc(50% - 5px);font-size:12px}
+.fxm .run .term{order:-1}
+.fxm .term ol{overflow-x:hidden}
+.fxm .term li{white-space:pre-wrap}
+.fxm .nav .vista{aspect-ratio:3/4}
+.fxm .fachada{background:#59BFC7}
+.fxm .panel{background:transparent;min-height:auto}
+.fxm .panel .in{padding:64px 16px}
+.fxm .panel .abrir{display:none}
+.fxm .pegatina{right:8px}
+a.vivo{text-decoration:none}
+.sube{opacity:0;transform:translateY(28px)}
+.sinfx .sube{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.baja svg,.vivo .pt,.term .cursor{animation:none}}
+</style>
+</head>
+<body class="sinfx">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="niv" viewBox="0 0 14 12"><path d="M1 1h12L7 11z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M0 1h14" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-yo" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21c1-5 5-7 8-7s7 2 8 7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-rama" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="19" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 7.5v9M18 11.5c0 4-6 3-11 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-pr" viewBox="0 0 24 24"><path d="M5 12h11M12 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-ok" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <a href="#inicio">Juan Ortiz</a>
+  <a class="cv" href="https://juanortiz.opspilot.es/">Ver CV</a>
+</header>
+
+<nav class="ascensor" aria-label="Plantas de la obra">
+  <a href="#cubierta" data-p="cubierta"><i>C</i><span>Contacto</span></a>
+  <a href="#fachada" data-p="fachada"><i>1</i><span>Webs</span></a>
+  <a href="#calle" data-p="calle"><i>0</i><span>Productos</span></a>
+  <a href="#sotano" data-p="sotano"><i>−1</i><span>Sistemas</span></a>
+</nav>
+
+<main id="inicio">
+
+<!-- ============ 0 · PORTADA ============ -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="hero-txt">
+      <p class="quien"><b>Juan Ortiz Romero</b> · Córdoba · cofundador de OpsPilot</p>
+      <h1>Digitalizo negocios que <em>se construyen a pie de obra.</em></h1>
+      <p class="lead">Esto no es la típica web con mis trabajos: es una obra, y la vamos a recorrer de abajo arriba. Primero lo que no se ve.</p>
+      <a class="baja" href="#sotano"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>Bajá conmigo al sótano</a>
+    </div>
+    <div id="corte" class="corte-wrap"><svg class="corte" viewBox="0 0 640 430" role="img" aria-label="Corte de un edificio: sistemas bajo tierra, productos en la planta baja y webs en la fachada">
+      <defs>
+        <pattern id="rayado" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="9" height="9" fill="var(--papel2)"/><path d="M0 0v9" stroke="var(--linea)" stroke-width="1.4"/></pattern>
+      </defs>
+      <path class="fino" d="M58 52h-14M58 170h-14M58 270h-14M58 400h-14M51 52v348"/>
+      <text class="cota" x="38" y="56" text-anchor="end">+6,00</text>
+      <text class="cota" x="38" y="174" text-anchor="end">+3,00</text>
+      <text class="cota" x="38" y="274" text-anchor="end" style="fill:var(--naranja-txt);font-weight:700">±0,00</text>
+      <text class="cota" x="38" y="404" text-anchor="end">−3,00</text>
+      <rect x="58" y="270" width="582" height="150" fill="url(#rayado)"/>
+      <path class="ras" d="M58 270h582"/>
+      <rect class="caja" x="96" y="296" width="150" height="96"/><text class="lbl" x="171" y="338" text-anchor="middle">NotionPilot</text><text class="sub" x="171" y="357" text-anchor="middle">panel de operaciones</text>
+      <rect class="caja" x="262" y="296" width="150" height="96"/><text class="lbl" x="337" y="338" text-anchor="middle">Runner + agentes</text><text class="sub" x="337" y="357" text-anchor="middle">IA con aprobación</text>
+      <rect class="caja" x="428" y="296" width="150" height="96"/><text class="lbl" x="503" y="338" text-anchor="middle">ERP hub</text><text class="sub" x="503" y="357" text-anchor="middle">multiempresa</text>
+      <path class="muro" d="M80 270V170h520v100"/>
+      <rect class="caja" x="96" y="186" width="150" height="70"/><text class="lbl" x="171" y="219" text-anchor="middle">PresupuesYa</text><text class="sub" x="171" y="238" text-anchor="middle">SaaS de presupuestos</text>
+      <rect class="caja" x="262" y="186" width="150" height="70"/><text class="lbl" x="337" y="219" text-anchor="middle">ObraFácil</text><text class="sub" x="337" y="238" text-anchor="middle">tienda + panel</text>
+      <rect class="caja" x="428" y="186" width="150" height="70"/><text class="lbl" x="503" y="219" text-anchor="middle">Córdoba Soluciona</text><text class="sub" x="503" y="238" text-anchor="middle">captación de reformas</text>
+      <path class="muro" d="M80 170V52h520v118"/>
+      <g class="ven"><rect x="104" y="78" width="32" height="30"/><rect x="148" y="78" width="32" height="30"/><rect x="192" y="78" width="32" height="30"/><rect x="236" y="78" width="32" height="30"/><rect x="280" y="78" width="32" height="30"/><rect x="324" y="78" width="32" height="30"/><rect x="104" y="118" width="32" height="30"/><rect x="148" y="118" width="32" height="30"/><rect x="192" y="118" width="32" height="30"/><rect x="236" y="118" width="32" height="30"/><rect x="280" y="118" width="32" height="30"/></g>
+      <text class="lbl" x="380" y="104">Fachada</text><text class="sub" x="380" y="124">11 webs de cliente</text>
+      <path class="muro" d="M68 52L340 14l272 38"/>
+    </svg></div>
+  </div>
+  <div class="oscuro" id="oscuro"></div>
+  <p class="rotulo" id="rotulo">Planta −1<small>Aquí abajo está lo que sostiene todo lo demás.</small></p>
+</section>
+
+<!-- ============ 1 · SÓTANO ============ -->
+<div class="sotano" id="sotano">
+  <section class="entrada-sotano">
+    <div class="wrap">
+      <p class="kick"><svg aria-hidden="true"><use href="#niv"/></svg>−3,00 · Cimentación</p>
+      <h2>Los sistemas.</h2>
+      <p class="l">Herramientas internas para que un equipo de dos gestione decenas de proyectos a la vez, con la IA trabajando dentro y una persona decidiendo.</p>
+      <p class="acot">Está oscuro a propósito. Mové el ratón: llevás la linterna.</p>
+    </div>
+  </section>
+
+  <!-- NotionPilot -->
+  <section class="cap" id="cap-np">
+    <div class="wrap np">
+      <div class="sube">
+        <p class="kick">01 · Panel de operaciones</p>
+        <h2>NotionPilot</h2>
+        <p class="l">Clientes, tareas, documentos y decisiones dejaron de vivir en WhatsApp. Un panel propio, hecho con mi socio, con un servidor MCP para que la IA lea y escriba con permisos limitados.</p>
+        <div class="cifras num">
+          <div><b data-cuenta="24">24</b>proyectos</div>
+          <div><b data-cuenta="593">593</b>tareas</div>
+          <div><b data-cuenta="537">537</b>commits</div>
+        </div>
+        <p class="regla">«Si no está escrito en el panel, no pasó.»</p>
+      </div>
+      <div class="tablero sube" role="img" aria-label="Tablero de NotionPilot con tareas reales moviéndose de columna hasta Hecho">
+        <div class="barra"><i></i><i></i><i></i><b>NotionPilot</b>&nbsp;· tablero de la agencia</div>
+        <div class="cols" aria-hidden="true">
+          <div><h4>Pendiente</h4><div class="col"></div></div>
+          <div><h4>En curso</h4><div class="col"></div></div>
+          <div><h4>Aprobación</h4><div class="col"></div></div>
+          <div><h4>Hecho ✓</h4><div class="col"></div></div>
+        </div>
+        <div class="tarjetas">
+          <div class="tj" data-c="0" data-r="0"><small>ERP</small>Auditoría de seguridad: aislamiento entre empresas<span class="st">15 migraciones</span></div>
+          <div class="tj" data-c="0" data-r="1"><small>PresupuesYa</small>Plantillas convertidas en packs<span class="st">PR #95</span></div>
+          <div class="tj" data-c="0" data-r="2"><small>Kit</small>Añadir PT Sans al Estudio<span class="st">runner</span></div>
+          <div class="tj" data-c="1" data-r="0"><small>Siluetas</small>Demo de la app para socias<span class="st">en vivo</span></div>
+          <div class="tj" data-c="1" data-r="1"><small>ObraFácil</small>Revisar y mergear PRs #32–#37<span class="st">+ 2 migraciones</span></div>
+          <div class="tj" data-c="2" data-r="0"><small>Córdoba Soluciona</small>Medir Search Console por barrio<span class="st">semanal</span></div>
+          <div class="tj v" data-c="3" data-r="0"><small>Ventcor</small>Web v4 publicada para el dueño<span class="st">Lighthouse 99</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Runner -->
+  <section class="cap" id="cap-run">
+    <div class="wrap run">
+      <div class="sube">
+        <p class="kick">02 · IA que trabaja de noche</p>
+        <h2>Runner y agentes</h2>
+        <p class="l">Cada mañana a las 6:00 un ejecutor coge las tareas aprobadas, trabaja en una rama aislada de cada repositorio y deja un pull request para revisar. Tiene un tope de gasto por tarea. Si algo no cuadra, no adivina: devuelve la tarea con el motivo.</p>
+        <div class="tuberia" id="tuberia">
+          <div class="fill"></div>
+          <div class="nodo"><i><svg><use href="#i-doc"/></svg></i>Tarea</div>
+          <div class="nodo humano"><i><svg><use href="#i-yo"/></svg></i>Aprueba una persona</div>
+          <div class="nodo"><i><svg><use href="#i-rama"/></svg></i>Rama aislada</div>
+          <div class="nodo"><i><svg><use href="#i-pr"/></svg></i>Pull request</div>
+          <div class="nodo humano"><i><svg><use href="#i-ok"/></svg></i>Revisión</div>
+        </div>
+        <p class="acot" style="margin-top:18px">La IA es la herramienta. Quien decide sigue siendo una persona.</p>
+      </div>
+      <div class="term sube" role="img" aria-label="Registro del runner: lee 20 proyectos, devuelve una tarea por cambios fuera de alcance y deja otra como pull request esperando revisión humana">
+        <div class="barra"><i></i><i></i><i></i><span>opspilot-runner · 06:00</span></div>
+        <ol id="log">
+          <li><span class="g">$</span> runner diario · ventana de 7 días</li>
+          <li><b>leer </b>  7.244 eventos · 20 proyectos</li>
+          <li><b>cola </b>  4 tareas esperando aprobación</li>
+          <li><b>tarea</b>  [Kit] Añadir PT Sans · tope 2,00 $</li>
+          <li><b>check</b>  cambios fuera de alcance: fingerprint.cjs</li>
+          <li><span class="vu">↩ devuelta</span> «un humano debe revisarlo»</li>
+          <li><b>tarea</b>  [SEO] contenido local por ciudad</li>
+          <li><b>git  </b>  rama aislada → commit → PR</li>
+          <li><span class="ok">⏸ esperando revisión humana</span> <span class="cursor"></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ERP -->
+  <section class="cap" id="cap-erp">
+    <div class="wrap erp">
+      <svg class="hub" id="hub" viewBox="0 0 600 460" role="img" aria-label="El ERP en el centro, conectado a la tienda, los presupuestos, las webs, la facturación, el inventario y los roles">
+        <defs><radialGradient id="haloG"><stop offset="0" stop-color="#E2571E" stop-opacity=".45"/><stop offset="1" stop-color="#E2571E" stop-opacity="0"/></radialGradient></defs>
+        <circle class="halo" cx="300" cy="230" r="150" fill="url(#haloG)"/>
+        <g id="radios">
+          <path class="rad" d="M300 230L110 80"/><path class="rad" d="M300 230L490 80"/><path class="rad" d="M300 230L545 240"/>
+          <path class="rad" d="M300 230L470 400"/><path class="rad" d="M300 230L130 400"/><path class="rad" d="M300 230L55 240"/>
+        </g>
+        <g id="pulsos"><circle class="pulso" r="4"/><circle class="pulso" r="4"/><circle class="pulso" r="4"/><circle class="pulso" r="4"/><circle class="pulso" r="4"/><circle class="pulso" r="4"/></g>
+        <g>
+          <rect class="sat" x="40" y="52" width="140" height="56" rx="6"/><text x="110" y="78" text-anchor="middle">Tienda</text><text class="s" x="110" y="96" text-anchor="middle">ObraFácil</text>
+          <rect class="sat" x="420" y="52" width="140" height="56" rx="6"/><text x="490" y="78" text-anchor="middle">Presupuestos</text><text class="s" x="490" y="96" text-anchor="middle">PresupuesYa</text>
+          <rect class="sat" x="490" y="212" width="110" height="56" rx="6"/><text x="545" y="238" text-anchor="middle">Webs</text><text class="s" x="545" y="256" text-anchor="middle">de cliente</text>
+          <rect class="sat" x="400" y="372" width="140" height="56" rx="6"/><text x="470" y="398" text-anchor="middle">Facturación</text><text class="s" x="470" y="416" text-anchor="middle">libro inmutable</text>
+          <rect class="sat" x="60" y="372" width="140" height="56" rx="6"/><text x="130" y="398" text-anchor="middle">Inventario</text><text class="s" x="130" y="416" text-anchor="middle">stock y reposición</text>
+          <rect class="sat" x="0" y="212" width="110" height="56" rx="6"/><text x="55" y="238" text-anchor="middle">Roles</text><text class="s" x="55" y="256" text-anchor="middle">por empresa</text>
+        </g>
+        <circle class="nucleo" cx="300" cy="230" r="62"/>
+        <text x="300" y="226" text-anchor="middle" style="font-size:30px;font-weight:800;fill:#fff">ERP</text>
+        <text class="s" x="300" y="248" text-anchor="middle" style="fill:#FFB27A">REST + webhooks</text>
+      </svg>
+      <div class="sube">
+        <p class="kick">03 · El centro</p>
+        <h2>ERP hub</h2>
+        <p class="l">Cada producto tenía su base de datos y sus facturas, y el mismo cliente aparecía cinco veces. Ahora hay un ERP multiempresa en el centro: los proyectos se enganchan por REST y webhooks, y cuando cambia el catálogo, la tienda se reindexa sola.</p>
+        <div class="sello-sec"><b class="num">15</b><span>migraciones en la auditoría de seguridad de octubre: cada empresa ve solo lo suyo.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kit -->
+  <section class="cap kit" id="cap-kit">
+    <div class="wrap">
+      <p class="kick">04 · Sistema de diseño</p>
+      <h2>21 marcas. Ninguna igual.</h2>
+      <p class="l">Un kit de piezas, un Estudio de marca y un registro anti-clon. Si una web nueva repite la letra o el color de otra, el sistema avisa y dice con cuál choca.</p>
+      <div class="muro" id="muro">
+        <div class="mc choque" data-choque="choque: Archivo ×4" style="--a:#FEFE00"><b>Dígito</b><span>Archivo</span></div>
+        <div class="mc" style="--a:#B4482F;--t:#fff"><b>Córdoba Soluciona</b><span>Young Serif</span></div>
+        <div class="mc" style="--a:#7D8C5A;--t:#fff"><b>J.R. Rodríguez</b><span>Fraunces</span></div>
+        <div class="mc choque" data-choque="choque: amarillo a 10°" style="--a:#F5D800"><b>ObraFácil</b><span>Archivo Black</span></div>
+        <div class="mc" style="--a:#FF5722"><b>World Fitness</b><span>Anton</span></div>
+        <div class="mc" style="--a:#C56B4F;--t:#fff"><b>Formaciones</b><span>Archivo Black</span></div>
+        <div class="mc" style="--a:#C1694A;--t:#fff"><b>MCF</b><span>Cormorant</span></div>
+        <div class="mc" style="--a:#336699;--t:#fff"><b>Inelsoft</b><span>Archivo</span></div>
+        <div class="mc" style="--a:#E8A020"><b>PresupuesYa</b><span>Bebas Neue</span></div>
+        <div class="mc" style="--a:#E0121B;--t:#fff"><b>Dayjo</b><span>Bricolage</span></div>
+        <div class="mc" style="--a:#ED7505"><b>Fluitecnik</b><span>Mulish</span></div>
+        <div class="mc" style="--a:#DADDE0"><b>Briss</b><span>Geist</span></div>
+        <div class="mc" style="--a:#59BFC7"><b>Ana Jurado</b><span>Gloock</span></div>
+        <div class="mc" style="--a:#1D4E9E;--t:#fff"><b>Melendo</b><span>Big Shoulders</span></div>
+        <div class="mc" style="--a:#D8231C;--t:#fff"><b>World Fitness v2</b><span>Anybody</span></div>
+        <div class="mc" style="--a:#323846;--t:#FEFE00"><b>Dígito v3</b><span>Anybody</span></div>
+        <div class="mc" style="--a:#9CA67B"><b>Rodríguez B</b><span>Bodoni Moda</span></div>
+        <div class="mc" style="--a:#51CB8A"><b>OpsPilot</b><span>Bricolage</span></div>
+        <div class="mc" style="--a:#D93A7A;--t:#fff"><b>Siluetas</b><span>Figtree</span></div>
+        <div class="mc" style="--a:#8C7A66;--t:#fff"><b>Luque</b><span>Saira</span></div>
+        <div class="mc" style="--a:#F09494"><b>Berral</b><span>Jost</span></div>
+      </div>
+      <div class="pie">
+        <p class="acot">Los dos avisos en rojo no son un fallo de diseño: es el registro haciendo su trabajo.</p>
+        <a href="https://opspilotcontact-lgtm.github.io/kit-visual/estudio/">Abrir el Estudio de marca →</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 2 · RASANTE ============ -->
+<section class="rasante" id="rasante" aria-label="Cota cero: salimos a la calle">
+  <div class="linea"></div>
+  <div class="flash"></div>
+  <div class="dia">
+    <div>
+      <span class="cota">±0,00</span>
+      <h2>Salimos a la calle.</h2>
+      <span class="acot">Ojo, que ahora hay luz.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · CALLE · PRODUCTOS ============ -->
+<div class="calle" id="calle">
+  <section class="prod" style="--bg:#0B0B0B;--fg:#F4EFE6;--ac:#E8A020">
+    <div class="wrap">
+      <div class="sube">
+        <p class="kick">Planta baja · 01</p>
+        <h2 class="nom">PresupuesYa</h2>
+        <p class="que">El reformista presupuesta de noche, en Excel, y no sabe si una obra le ha dejado margen. Aquí lo hace con sus precios, su logo en el PDF y la firma del cliente en el móvil.</p>
+        <div class="dato"><b>BC3</b><span>Importa y exporta el formato del sector, validado con bases de precios reales (BCCA y CAR).</span></div>
+        <p class="stack">React · TypeScript · Supabase · GitHub Actions</p>
+        <a class="ir" href="https://presupuesya.es/">presupuesya.es →</a>
+      </div>
+      <div class="nav sube">
+        <span class="pegatina">Es la web real. Se desplaza con tu scroll.</span>
+        <div class="bar"><i></i><i></i><i></i><span class="url">presupuesya.es</span></div>
+        <div class="vista"><img class="larga" src="img/presupuesya-tall.webp" width="960" height="3467" alt="Página completa de presupuesya.es" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod" style="--bg:#111111;--fg:#FFFFFF;--ac:#F5D800">
+    <div class="wrap">
+      <div class="sube">
+        <p class="kick">Planta baja · 02 · cliente real</p>
+        <h2 class="nom">ObraFácil</h2>
+        <p class="que">Un negocio familiar de placas decorativas con público en TikTok, pero sin un sitio donde vender. Les monté la tienda y el panel de detrás: ventas, rutas, facturas e inventario.</p>
+        <div class="dato"><b class="num">+60 %</b><span>de las ventas pasaron al canal web en los primeros meses.</span></div>
+        <p class="stack">Next.js · Supabase · Docker · conectada al ERP</p>
+        <a class="ir" href="https://obrafacil2025.es/">obrafacil2025.es →</a>
+      </div>
+      <div class="nav sube">
+        <div class="bar"><i></i><i></i><i></i><span class="url">obrafacil2025.es</span></div>
+        <div class="vista"><img class="larga" src="img/obrafacil-tall.webp" width="960" height="3467" alt="Página completa de la tienda obrafacil2025.es" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prod" style="--bg:#2F5E3B;--fg:#FBFAF5;--ac:#FFC9A8">
+    <div class="wrap">
+      <div class="sube">
+        <p class="kick">Planta baja · 03</p>
+        <h2 class="nom">Córdoba Soluciona</h2>
+        <p class="que">Los buenos reformistas de la provincia no salen en Google. Un portal con páginas por barrio y por pueblo, guías de precios y licencias, y contacto por WhatsApp.</p>
+        <div class="dato"><b>n.º 1</b><span>en Google para «reformas Fuensanta», «Santa Rosa» y «Brillante Córdoba».</span></div>
+        <p class="stack">SEO local · Search Console cada semana</p>
+        <a class="ir" href="https://cordobasoluciona.es/">cordobasoluciona.es →</a>
+      </div>
+      <div class="nav sube">
+        <div class="bar"><i></i><i></i><i></i><span class="url">cordobasoluciona.es</span></div>
+        <div class="vista"><img class="larga" src="img/cordoba-tall.webp" width="960" height="3467" alt="Página completa de cordobasoluciona.es" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 4 · FACHADA ============ -->
+<section class="fachada-intro" id="fachada">
+  <div class="txt">
+    <span class="cota">+3,00 · Fachada</span>
+    <h2>Once ventanas. Asomate a una.</h2>
+    <p class="acot">Cada web parte de leer al cliente: sus reseñas, su local, su catálogo. Por eso ninguna se parece a otra.</p>
+  </div>
+  <svg class="alzado" id="alzado" viewBox="0 0 1000 420" aria-hidden="true">
+    <path class="m" d="M40 400V90h920v310M20 400h960M20 90L500 20l480 70"/>
+    <g id="vanos">
+      <rect class="w" x="90" y="120" width="120" height="110"/>
+      <rect class="w" x="250" y="120" width="120" height="110"/><rect class="w" x="410" y="120" width="120" height="110"/><rect class="w" x="570" y="120" width="120" height="110"/><rect class="w" x="730" y="120" width="120" height="110"/>
+      <rect class="w" x="90" y="262" width="120" height="110"/><rect class="w" x="250" y="262" width="120" height="110"/><rect class="w" x="410" y="262" width="120" height="110"/><rect class="w" x="570" y="262" width="120" height="110"/><rect class="w" x="730" y="262" width="120" height="110"/>
+      <rect class="w" x="880" y="190" width="56" height="110"/>
+    </g>
+  </svg>
+  <div class="cortina" id="cortina"></div>
+</section>
+
+<section class="fachada" aria-label="Webs destacadas">
+  <div class="pista" id="pista">
+    <article class="panel" style="--bg:#59BFC7;--fg:#0F2E33;--ac:#FFFFFF;--glow:#C9F1F4">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">01</p>
+          <h3>Dra. Ana Jurado</h3>
+          <p class="sec">Medicina estética y nutrición · Córdoba</p>
+          <p class="idea">El doble aro de su monograma, a lo grande, con la doctora dentro. Cada tratamiento se cuenta como un motivo de consulta, con las palabras de la paciente.</p>
+          <div class="meta"><span class="chip">Propuesta</span><span class="lh" title="Lighthouse móvil"><i>95</i></span></div>
+          <div><button class="vivo" type="button" data-src="https://opspilotcontact-lgtm.github.io/anajurado-maqueta/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://opspilotcontact-lgtm.github.io/anajurado-maqueta/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">anajurado-maqueta</span></div><div class="vista"><img class="larga" src="img/anajurado-tall.webp" width="960" height="3467" alt="Web de la Dra. Ana Jurado completa" loading="lazy"></div></div>
+      </div>
+    </article>
+
+    <article class="panel" style="--bg:#1D4E9E;--fg:#FFFFFF;--ac:#BFD4F5;--glow:#4F86DA">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">02</p>
+          <h3>Melendo</h3>
+          <p class="sec">La casa de los azulejos · almacén de construcción</p>
+          <p class="idea">La casa de su logo con el tejado alicatado pieza a pieza mientras carga la página. Su producto, haciéndose.</p>
+          <div class="meta"><span class="chip">Propuesta</span><span class="lh" title="Lighthouse"><i>94</i><i>100</i><i>100</i></span></div>
+          <div><button class="vivo" type="button" data-src="https://opspilotcontact-lgtm.github.io/melendo-maqueta/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://opspilotcontact-lgtm.github.io/melendo-maqueta/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">melendo-maqueta</span></div><div class="vista"><img class="larga" src="img/melendo-tall.webp" width="960" height="3467" alt="Web de Melendo completa" loading="lazy"></div></div>
+      </div>
+    </article>
+
+    <article class="panel" style="--bg:#15120F;--fg:#F6EFE4;--ac:#F09494;--glow:#5A2E2E">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">03</p>
+          <h3>Berral Joyeros</h3>
+          <p class="sec">Joyería y relojería con taller · Medina Azahara</p>
+          <p class="idea">El solitario de su logo como firma, sobre el granito de su fachada. La tienda de 1.667 referencias sale de su propio catálogo, con el pedido por WhatsApp.</p>
+          <div class="meta"><span class="chip">Propuesta</span><span class="lh" title="Lighthouse"><i>100</i><i>100</i><i>100</i></span></div>
+          <div><button class="vivo" type="button" data-src="https://opspilotcontact-lgtm.github.io/berraljoyeros-maqueta/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://opspilotcontact-lgtm.github.io/berraljoyeros-maqueta/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">berraljoyeros-maqueta</span></div><div class="vista"><img class="larga" src="img/berral-tall.webp" width="960" height="3467" alt="Web de Berral Joyeros completa" loading="lazy"></div></div>
+      </div>
+    </article>
+
+    <article class="panel" style="--bg:#D8231C;--fg:#FFFFFF;--ac:#141212;--glow:#FF6B4A">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">04</p>
+          <h3>World Fitness</h3>
+          <p class="sec">Gimnasio 24 h y maquinaria · Puente Genil</p>
+          <p class="idea">Su escudo sostiene una barra que se carga de discos. Tiene una tienda de 163 máquinas y «Monta tu sala»: un plano a escala con precios y medidas reales que se manda al dueño por WhatsApp.</p>
+          <div class="meta"><span class="chip">Propuesta · web + tienda</span></div>
+          <div><button class="vivo" type="button" data-src="https://opspilotcontact-lgtm.github.io/worldfitness-maqueta-a/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://opspilotcontact-lgtm.github.io/worldfitness-maqueta-a/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">worldfitness-maqueta-a</span></div><div class="vista"><img class="larga" src="img/worldfitness-tall.webp" width="960" height="3467" alt="Web de World Fitness completa" loading="lazy"></div></div>
+      </div>
+    </article>
+
+    <article class="panel" style="--bg:#F3EBE0;--fg:#16323F;--ac:#D93A7A;--glow:#F6C1D6">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">05</p>
+          <h3>Siluetas de Mujer</h3>
+          <p class="sec">Entrenamiento y masaje · en producción</p>
+          <p class="idea">Los dos trazos de su logo son «el camino» que recorre toda la web. Además tiene una demo de la app para socias, con clases, hábitos y seguimiento.</p>
+          <div class="meta"><span class="chip">siluetasdemujer.es</span><a class="chip" href="https://siluetasdemujer.es/app-demo/" style="text-decoration:none">demo de la app ↗</a></div>
+          <div><button class="vivo" type="button" data-src="https://siluetasdemujer.es/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://siluetasdemujer.es/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">siluetasdemujer.es</span></div><div class="vista"><img class="larga" src="img/siluetas-tall.webp" width="960" height="3467" alt="Web de Siluetas de Mujer completa" loading="lazy"></div></div>
+      </div>
+    </article>
+
+    <article class="panel" style="--bg:#F2EDE6;--fg:#3B3128;--ac:#8C7A66;--glow:#FFFFFF">
+      <div class="glow"></div>
+      <div class="in">
+        <div class="txt">
+          <p class="n">06</p>
+          <h3>Luque Joyeros</h3>
+          <p class="sec">Distribuidor oficial Rolex · joyería familiar</p>
+          <p class="idea">Su monograma real, tallado como una esmeralda sobre nácar. «Nada es impersonal ni se deja al azar», y un catálogo de 237 piezas.</p>
+          <div class="meta"><span class="chip">Propuesta</span><span class="lh" title="Lighthouse"><i>99</i><i>100</i><i>100</i></span></div>
+          <div><button class="vivo" type="button" data-src="https://opspilotcontact-lgtm.github.io/luquejoyeros-maqueta/"><span class="pt"></span><span>Entrar en la web</span></button><a class="abrir" href="https://opspilotcontact-lgtm.github.io/luquejoyeros-maqueta/">abrir aparte ↗</a></div>
+          <p class="nota4" aria-live="polite"></p>
+        </div>
+        <div class="nav"><div class="bar"><i></i><i></i><i></i><span class="url">luquejoyeros-maqueta</span></div><div class="vista"><img class="larga" src="img/luque-tall.webp" width="960" height="3467" alt="Web de Luque Joyeros completa" loading="lazy"></div></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="mas">
+  <div class="wrap">
+    <h3>Y cinco ventanas más.</h3>
+    <p class="acot">Pasá el ratón por encima: se encienden.</p>
+    <div class="ventanas">
+      <a class="vt sube" href="https://opspilotcontact-lgtm.github.io/ventcor-maqueta/?v=4"><div class="marco"><img src="img/ventcor.webp" width="1200" height="750" alt="Web de Ventcor" loading="lazy"></div><b>Ventcor</b><span>Climatización para grandes obras: hospitales y hoteles como prueba.</span><em>Propuesta · 15 rutas</em></a>
+      <a class="vt sube" href="https://opspilotcontact-lgtm.github.io/rodriguezreformas-maqueta-b/"><div class="marco"><img src="img/rodriguez.webp" width="1200" height="750" alt="Web de J.R. Rodríguez e Hijos" loading="lazy"></div><b>J.R. Rodríguez e Hijos</b><span>Reformas: el plano de una vivienda dibujado en tinta.</span><em>Propuesta</em></a>
+      <a class="vt sube" href="https://opspilotcontact-lgtm.github.io/digito-maqueta/"><div class="marco"><img src="img/digito.webp" width="1200" height="750" alt="Web de Dígito Rotulación" loading="lazy"></div><b>Dígito Rotulación</b><span>Su fachada como un solo objeto; un portfolio que filtra a los curiosos.</span><em>Propuesta</em></a>
+      <a class="vt sube" href="https://maderasyeadel.es/"><div class="marco"><img src="img/yeadel.webp" width="1200" height="750" alt="Web de Maderas Yeadel" loading="lazy"></div><b>Maderas Yeadel</b><span>Carpintería: precio orientativo antes de que vaya nadie.</span><em>En producción</em></a>
+      <a class="vt sube" href="https://opspilot.es/"><div class="marco"><img src="img/opspilot.webp" width="1200" height="750" alt="Web de OpsPilot" loading="lazy"></div><b>OpsPilot</b><span>Nuestra web: el aro del logo como un horizonte artificial.</span><em>En producción</em></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · CUBIERTA ============ -->
+<section class="cubierta" id="cubierta">
+  <div class="estrellas"></div>
+  <div class="wrap">
+    <h2>Fin de la visita.</h2>
+    <p>Bajaste al sótano, saliste a la calle y te asomaste a once ventanas. Lo que falta está en el CV. Si te ha gustado la obra, hablamos.</p>
+    <div class="bot">
+      <a class="btn prim" href="https://juanortiz.opspilot.es/">Ver el CV</a>
+      <a class="btn" href="mailto:Juanortiz11615@gmail.com">Juanortiz11615@gmail.com</a>
+    </div>
+  </div>
+  <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="ed" d="M0 260V150h120v-40h140v150zM280 260V90h180v170zM480 260V130l110-60 110 60v130zM720 260V60h200v200zM940 260V120h150v140zM1110 260V80h170v180zM1300 260V140h140v120z"/>
+    <g id="luces">
+      <rect class="w" x="300" y="110" width="26" height="22"/><rect class="w" x="346" y="110" width="26" height="22"/><rect class="w" x="392" y="110" width="26" height="22"/>
+      <rect class="w" x="742" y="84" width="26" height="22"/><rect class="w" x="790" y="84" width="26" height="22"/><rect class="w" x="838" y="84" width="26" height="22"/>
+      <rect class="w" x="742" y="128" width="26" height="22"/><rect class="w" x="838" y="128" width="26" height="22"/>
+      <rect class="w" x="1134" y="104" width="26" height="22"/><rect class="w" x="1182" y="104" width="26" height="22"/><rect class="w" x="1230" y="104" width="26" height="22"/>
+    </g>
+  </svg>
+  <small>Juan Ortiz Romero · Córdoba · octubre de 2026 · capturas de las webs en vivo</small>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+
+  /* linterna del sótano */
+  var sot = $('#sotano');
+  sot.addEventListener('pointermove', function(e){
+    var r = sot.getBoundingClientRect();
+    sot.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    sot.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+
+  /* ventanas vivas: la web real dentro de esta */
+  function escala(vista){
+    var f = vista.querySelector('iframe'); if(f) f.style.transform = 'scale(' + (vista.clientWidth / 1440) + ')';
+  }
+  var frases = ['Sí, es la web de verdad, funcionando dentro de esta.','Tocá lo que quieras: no se rompe.','Estás dentro de una web, dentro de otra web.'];
+  $$('.vivo').forEach(function(b, i){
+    var label = b.lastElementChild;
+    b.addEventListener('click', function(){
+      var panel = b.closest('.panel'), vista = $('.vista', panel), img = $('img.larga', vista), nota = $('.nota4', panel);
+      var f = $('iframe', vista);
+      if(f){ f.remove(); img.style.visibility=''; label.textContent='Entrar en la web'; nota.textContent=''; return; }
+      f = document.createElement('iframe');
+      f.src = b.dataset.src; f.title = 'Web en vivo';
+      vista.appendChild(f); escala(vista); img.style.visibility='hidden';
+      label.textContent = 'Volver a la captura';
+      nota.textContent = frases[i % frases.length];
+    });
+  });
+  addEventListener('resize', function(){ $$('.vista').forEach(escala) });
+
+  function planta(id){ $$('.ascensor a').forEach(function(a){ a.classList.toggle('on', a.dataset.p===id) }) }
+
+  if(typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !reduce && innerWidth < 900){ movil(); return; }
+
+  if(typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined' || reduce || innerWidth < 900){
+    /* sin efectos: todo legible, apilado y desplazable a mano */
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting) planta(e.target.id) }) },{rootMargin:'-45% 0px -50% 0px'});
+      ['sotano','calle','fachada','cubierta'].forEach(function(id){ io.observe(document.getElementById(id)) });
+    }
+    return;
+  }
+
+  document.body.classList.remove('sinfx');
+  document.documentElement.classList.add('fx');
+  gsap.registerPlugin(ScrollTrigger);
+  var ease = 'power3.out';
+
+  /* 0 · bajada al sótano: zoom a la cimentación */
+  gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'+=120%',pin:true,scrub:1}})
+    .to('.hero-txt',{y:-80,opacity:0,duration:.35,ease:'none'},0)
+    .to('#corte',{scale:4.2,y:'-62%',x:'-10%',transformOrigin:'52% 80%',duration:1,ease:'power2.in'},0)
+    .to('#oscuro',{opacity:1,duration:.35,ease:'none'},.62)
+    .to('#rotulo',{opacity:1,y:-20,duration:.25},.8);
+
+  /* entradas */
+  $$('.sube').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1,ease:ease,scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+
+  /* contadores */
+  $$('[data-cuenta]').forEach(function(b){
+    var o={v:0}, fin=+b.dataset.cuenta;
+    b.textContent = '0';
+    gsap.to(o,{v:fin,duration:1.8,ease:'power2.out',scrollTrigger:{trigger:b,start:'top 88%'},
+      onUpdate:function(){ b.textContent = Math.round(o.v).toLocaleString('es-ES') }});
+  });
+
+  /* NotionPilot: las tarjetas cambian de columna con el scroll */
+  var board = $('.tarjetas'), cards = $$('.tj', board);
+  function px(c){ return c * (board.clientWidth + 10) / 4 }
+  function py(r){ return r * 88 }
+  cards.forEach(function(t){ gsap.set(t,{x:px(+t.dataset.c),y:py(+t.dataset.r)}) });
+  var moves = [[3,3,1],[5,3,2],[4,2,0],[0,1,0],[1,3,3],[0,3,4],[4,3,5],[2,1,1]];
+  var tlNp = gsap.timeline({scrollTrigger:{trigger:'#cap-np',start:'top top',end:'+=170%',pin:true,scrub:1,invalidateOnRefresh:true}});
+  moves.forEach(function(m,i){
+    var t = cards[m[0]];
+    tlNp.to(t,{x:function(){return px(m[1])},y:function(){return py(m[2])},duration:1,ease:'power2.inOut'},i*.7);
+  });
+  ScrollTrigger.create({trigger:'#cap-np',start:'top top',end:'+=170%',onUpdate:function(){
+    cards.forEach(function(t){ t.classList.toggle('v', gsap.getProperty(t,'x') >= px(3) - 4) });
+  }});
+
+  /* Runner: el registro se escribe y la tarea avanza por la tubería */
+  var lines = $$('#log li'), nodos = $$('#tuberia .nodo');
+  gsap.set(lines,{opacity:0,x:-8});
+  var tlRun = gsap.timeline({scrollTrigger:{trigger:'#cap-run',start:'top top',end:'+=170%',pin:true,scrub:1,
+    onUpdate:function(s){ nodos.forEach(function(n,i){ n.classList.toggle('on', s.progress >= i/(nodos.length-1)*.92) }) }}});
+  lines.forEach(function(l,i){ tlRun.to(l,{opacity:1,x:0,duration:.3},i*.5) });
+  tlRun.to('#tuberia .fill',{scaleX:1,duration:(lines.length-1)*.5+.3,ease:'none'},0);
+
+  /* ERP: se encienden los radios y viajan los pulsos */
+  var radios = $$('#radios path'), pulsos = $$('#pulsos circle');
+  radios.forEach(function(p){ var L=p.getTotalLength(); p.style.strokeDasharray=L; p.style.strokeDashoffset=L });
+  var tlErp = gsap.timeline({scrollTrigger:{trigger:'#cap-erp',start:'top 70%',end:'center center',scrub:1}});
+  radios.forEach(function(p,i){ tlErp.to(p,{strokeDashoffset:0,duration:1,ease:'none'},i*.25) });
+  tlErp.call(function(){ radios.forEach(function(p){ p.classList.toggle('on', tlErp.scrollTrigger.direction>0) }) });
+  gsap.fromTo('#hub .halo',{scale:.6,opacity:0,transformOrigin:'50% 50%'},{scale:1.1,opacity:1,scrollTrigger:{trigger:'#cap-erp',start:'top 60%',end:'center center',scrub:1}});
+  pulsos.forEach(function(c,i){
+    var p = radios[i], L = p.getTotalLength(), o = {t:0};
+    c.style.opacity = 0;
+    gsap.to(o,{t:1,duration:1.6+i*.15,repeat:-1,ease:'none',delay:i*.3,
+      onUpdate:function(){ var k = (i%2) ? 1-o.t : o.t, pt=p.getPointAtLength(k*L); c.setAttribute('cx',pt.x); c.setAttribute('cy',pt.y); c.style.opacity = Math.sin(o.t*Math.PI) },
+      scrollTrigger:{trigger:'#cap-erp',start:'top 40%',end:'bottom top',toggleActions:'play pause resume pause'}});
+  });
+
+  /* Kit: las 21 marcas caen desordenadas, se colocan y salta la alarma */
+  var muro = $('#muro');
+  gsap.from($$('.mc',muro),{x:function(){return gsap.utils.random(-260,260)},y:function(){return gsap.utils.random(-300,120)},rotation:function(){return gsap.utils.random(-40,40)},opacity:0,
+    ease:'power2.out',stagger:{each:.04,from:'random'},
+    scrollTrigger:{trigger:muro,start:'top 92%',end:'top 38%',scrub:1,
+      onLeave:function(){muro.classList.add('alerta')},onEnterBack:function(){muro.classList.remove('alerta')}}});
+
+  /* 2 · la rasante: la línea, el fogonazo y el día */
+  gsap.timeline({scrollTrigger:{trigger:'#rasante',start:'top top',end:'+=130%',pin:true,scrub:1}})
+    .to('#rasante .linea',{scaleX:1,duration:.5,ease:'power2.inOut'})
+    .to('#rasante .flash',{opacity:1,duration:.12},'-=.05')
+    .to('#rasante .dia',{clipPath:'inset(0% 0 0% 0)',duration:.45,ease:'power3.inOut'},'<')
+    .to('#rasante .linea',{opacity:0,duration:.1},'<.1')
+    .to('#rasante .flash',{opacity:0,duration:.3})
+    .from('#rasante .dia > div',{scale:.9,opacity:0,duration:.3},'<-.2');
+
+  /* 3 · productos: el mundo cambia de color y la web se desplaza dentro */
+  var calle = $('#calle'), papel = '#F1F0EB', tinta = '#16212B';
+  $$('#calle .prod').forEach(function(s){
+    var cs = getComputedStyle(s), bg = cs.getPropertyValue('--bg').trim(), fg = cs.getPropertyValue('--fg').trim();
+    var img = $('img.larga', s), vista = $('.vista', s);
+    gsap.timeline({scrollTrigger:{trigger:s,start:'top top',end:'+=140%',pin:true,scrub:1,invalidateOnRefresh:true}})
+      .fromTo(img,{y:0},{y:function(){return -(img.clientHeight - vista.clientHeight)},ease:'none',duration:1},0)
+      .fromTo($('.nav',s),{rotationY:-10,rotationX:5,transformPerspective:1400},{rotationY:0,rotationX:0,duration:.35,ease:'power2.out'},0);
+    ScrollTrigger.create({trigger:s,start:'top 65%',end:function(){return '+=' + (innerHeight*1.4 + s.offsetHeight*.7)},
+      onToggle:function(st){ if(st.isActive) gsap.to(calle,{backgroundColor:bg,color:fg,duration:.9,ease:'power2.out'}) }});
+  });
+  ScrollTrigger.create({trigger:'#calle',start:'top 65%',onLeaveBack:function(){ gsap.to(calle,{backgroundColor:papel,color:tinta,duration:.5}) }});
+
+  /* 4 · fachada: se encienden las ventanas y entramos por la primera */
+  var alz = $('#alzado');
+  gsap.timeline({scrollTrigger:{trigger:'#fachada',start:'top top',end:'+=150%',pin:true,scrub:1}})
+    .to('#vanos .w',{attr:{class:'w lit'},stagger:{each:.04,from:'random'},duration:.01},0)
+    .to('.fachada-intro .txt',{opacity:0,y:-60,duration:.3},.25)
+    .to(alz,{scale:10,transformOrigin:'15% 41%',duration:1,ease:'power3.in'},.3)
+    .to('#cortina',{opacity:1,duration:.2},1.05);
+
+  /* recorrido horizontal por las webs */
+  var pista = $('#pista'), paneles = $$('.panel', pista);
+  function dist(){ return pista.scrollWidth - innerWidth }
+  var horiz = gsap.to(pista,{x:function(){return -dist()},ease:'none',
+    scrollTrigger:{trigger:'.fachada',start:'top top',end:function(){return '+=' + dist()},pin:true,scrub:1,invalidateOnRefresh:true}});
+  paneles.forEach(function(p,k){
+    var img = $('img.larga',p), vista = $('.vista',p);
+    gsap.fromTo(img,{y:0},{y:function(){return -(img.clientHeight - vista.clientHeight)},ease:'none',
+      scrollTrigger:{trigger:p,containerAnimation:horiz,start:k?'left 60%':'left left',end:'right 40%',scrub:true,invalidateOnRefresh:true}});
+    gsap.fromTo($('.glow',p),{xPercent:-35},{xPercent:35,ease:'none',scrollTrigger:{trigger:p,containerAnimation:horiz,start:'left right',end:'right left',scrub:true}});
+    gsap.from($('.txt',p).children,{y:44,opacity:0,stagger:.07,duration:.8,ease:ease,
+      scrollTrigger:{trigger:p,containerAnimation:horiz,start:'left 55%',toggleActions:'play none none reverse'}});
+    gsap.fromTo($('.nav',p),{rotationY:12,transformPerspective:1600,x:60},{rotationY:-5,x:-30,ease:'none',
+      scrollTrigger:{trigger:p,containerAnimation:horiz,start:'left right',end:'right left',scrub:true}});
+  });
+
+  /* 5 · cubierta: se encienden las luces de la ciudad */
+  gsap.to('#luces .w',{attr:{class:'w lit'},stagger:{each:.09,from:'random'},duration:.01,scrollTrigger:{trigger:'#cubierta',start:'top 55%'}});
+  gsap.from('#cubierta .wrap > *',{y:50,opacity:0,stagger:.12,duration:1,ease:ease,scrollTrigger:{trigger:'#cubierta',start:'top 55%'}});
+
+  /* ascensor: qué planta se ve */
+  [['#hero',''],['#sotano','sotano'],['#rasante','calle'],['#calle','calle'],['#fachada','fachada'],['.fachada','fachada'],['.mas','fachada'],['#cubierta','cubierta']].forEach(function(z){
+    var el = $(z[0]), sp = el.parentElement.classList.contains('pin-spacer') ? el.parentElement : el;
+    ScrollTrigger.create({trigger:sp,start:'top 50%',end:'bottom 50%',onToggle:function(s){ if(s.isActive) planta(z[1]) }});
+  });
+
+  addEventListener('load',function(){ ScrollTrigger.refresh() });
+
+  /* ===== MÓVIL: el mismo viaje, en vertical y sin fijar lo que no cabe ===== */
+  function movil(){
+    document.body.classList.remove('sinfx');
+    document.documentElement.classList.add('fxm');
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ignoreMobileResize:true});
+    var ease='power3.out';
+
+    /* las ventanas vivas se abren aparte: dentro de un móvil no caben */
+    $$('button.vivo').forEach(function(b){
+      var a=document.createElement('a'); a.className='vivo'; a.href=b.dataset.src; a.target='_blank'; a.rel='noopener';
+      a.innerHTML='<span class="pt"></span><span>Abrir la web ↗</span>'; b.replaceWith(a);
+    });
+
+    /* portada: bajamos a la cimentación */
+    gsap.timeline({scrollTrigger:{trigger:'#hero',start:'top top',end:'+=90%',pin:true,scrub:.6}})
+      .to('.hero-txt',{y:-60,opacity:0,duration:.35,ease:'none'},0)
+      .to('#corte',{scale:3.4,y:'-38%',transformOrigin:'50% 80%',duration:1,ease:'power2.in'},0)
+      .to('#oscuro',{opacity:1,duration:.35,ease:'none'},.6)
+      .to('#rotulo',{opacity:1,y:-20,duration:.25},.8);
+
+    /* la linterna se mueve sola; si tocás la pantalla, te sigue el dedo */
+    var L={x:.3,y:.25}, toque=0;
+    gsap.to(L,{keyframes:[{x:.8,y:.4},{x:.2,y:.65},{x:.75,y:.85},{x:.3,y:.25}],duration:12,repeat:-1,ease:'sine.inOut',
+      onUpdate:function(){ if(Date.now()-toque<1500) return; var r=sot.getBoundingClientRect();
+        sot.style.setProperty('--mx',(L.x*r.width)+'px'); sot.style.setProperty('--my',(-r.top+innerHeight*L.y)+'px') }});
+    sot.addEventListener('touchmove',function(e){ var t=e.touches[0], r=sot.getBoundingClientRect(); toque=Date.now();
+      sot.style.setProperty('--mx',(t.clientX-r.left)+'px'); sot.style.setProperty('--my',(t.clientY-r.top)+'px') },{passive:true});
+
+    $$('.sube').forEach(function(el){ gsap.to(el,{opacity:1,y:0,duration:.9,ease:ease,scrollTrigger:{trigger:el,start:'top 90%'}}) });
+    $$('[data-cuenta]').forEach(function(b){ var o={v:0}, fin=+b.dataset.cuenta; b.textContent='0';
+      gsap.to(o,{v:fin,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:b,start:'top 90%'},onUpdate:function(){ b.textContent=Math.round(o.v).toLocaleString('es-ES') }}) });
+
+    /* NotionPilot: dos columnas; las tareas pasan a Hecho mientras bajás */
+    var board=$('.tarjetas'), cards=$$('.tj',board), izq=0, der=0;
+    function mitad(){ return (board.clientWidth+10)/2 }
+    cards.forEach(function(t){ var hecho=+t.dataset.c>=3; gsap.set(t,{x:hecho?mitad():0,y:(hecho?der++:izq++)*84}) });
+    var tlNp=gsap.timeline({scrollTrigger:{trigger:'.tablero',start:'top 70%',end:'bottom 30%',scrub:.6,invalidateOnRefresh:true,
+      onUpdate:function(){ cards.forEach(function(t){ t.classList.toggle('v', gsap.getProperty(t,'x') >= mitad()-4) }) }}});
+    [3,5,4,0,1,2].forEach(function(k,i){ tlNp.to(cards[k],{x:mitad,y:(1+i)*84,duration:1,ease:'power2.inOut'},i*.6) });
+
+    /* Runner: se escribe el registro y avanza la tubería */
+    var lines=$$('#log li'), nodos=$$('#tuberia .nodo');
+    gsap.set(lines,{opacity:0,x:-8});
+    var tlRun=gsap.timeline({scrollTrigger:{trigger:'#cap-run',start:'top 65%',end:'bottom 75%',scrub:.6,
+      onUpdate:function(s){ nodos.forEach(function(n,i){ n.classList.toggle('on', s.progress >= i/(nodos.length-1)*.92) }) }}});
+    lines.forEach(function(l,i){ tlRun.to(l,{opacity:1,x:0,duration:.3},i*.5) });
+    tlRun.to('#tuberia .fill',{scaleX:1,duration:(lines.length-1)*.5+.3,ease:'none'},0);
+
+    /* ERP: se encienden los radios y viajan los pulsos */
+    var radios=$$('#radios path'), pulsos=$$('#pulsos circle');
+    radios.forEach(function(p){ var Lg=p.getTotalLength(); p.style.strokeDasharray=Lg; p.style.strokeDashoffset=Lg });
+    var tlErp=gsap.timeline({scrollTrigger:{trigger:'#hub',start:'top 85%',end:'center 45%',scrub:.6}});
+    radios.forEach(function(p,i){ tlErp.to(p,{strokeDashoffset:0,duration:1,ease:'none'},i*.25) });
+    tlErp.call(function(){ radios.forEach(function(p){ p.classList.toggle('on', tlErp.scrollTrigger.direction>0) }) });
+    gsap.fromTo('#hub .halo',{scale:.6,opacity:0,transformOrigin:'50% 50%'},{scale:1.1,opacity:1,scrollTrigger:{trigger:'#hub',start:'top 85%',end:'center 50%',scrub:.6}});
+    pulsos.forEach(function(c,i){ var p=radios[i], Lg=p.getTotalLength(), o={t:0}; c.style.opacity=0;
+      gsap.to(o,{t:1,duration:1.6+i*.15,repeat:-1,ease:'none',delay:i*.3,
+        onUpdate:function(){ var k=(i%2)?1-o.t:o.t, pt=p.getPointAtLength(k*Lg); c.setAttribute('cx',pt.x); c.setAttribute('cy',pt.y); c.style.opacity=Math.sin(o.t*Math.PI) },
+        scrollTrigger:{trigger:'#hub',start:'top 80%',end:'bottom top',toggleActions:'play pause resume pause'}}) });
+
+    /* Kit: caen las marcas y salta la alarma */
+    var muro=$('#muro');
+    gsap.from($$('.mc',muro),{x:function(){return gsap.utils.random(-140,140)},y:function(){return gsap.utils.random(-220,80)},rotation:function(){return gsap.utils.random(-35,35)},opacity:0,
+      ease:'power2.out',stagger:{each:.04,from:'random'},
+      scrollTrigger:{trigger:muro,start:'top 95%',end:'center 55%',scrub:.6,onLeave:function(){muro.classList.add('alerta')},onEnterBack:function(){muro.classList.remove('alerta')}}});
+
+    /* rasante: la línea, el fogonazo y el día */
+    gsap.timeline({scrollTrigger:{trigger:'#rasante',start:'top top',end:'+=100%',pin:true,scrub:.6}})
+      .to('#rasante .linea',{scaleX:1,duration:.5,ease:'power2.inOut'})
+      .to('#rasante .flash',{opacity:1,duration:.12},'-=.05')
+      .to('#rasante .dia',{clipPath:'inset(0% 0 0% 0)',duration:.45,ease:'power3.inOut'},'<')
+      .to('#rasante .linea',{opacity:0,duration:.1},'<.1')
+      .to('#rasante .flash',{opacity:0,duration:.3})
+      .from('#rasante .dia > div',{scale:.9,opacity:0,duration:.3},'<-.2');
+
+    /* productos: cambia el color del mundo y la web se desplaza dentro */
+    var calle=$('#calle');
+    $$('#calle .prod').forEach(function(s){
+      var cs=getComputedStyle(s), bg=cs.getPropertyValue('--bg').trim(), fg=cs.getPropertyValue('--fg').trim();
+      var img=$('img.larga',s), vista=$('.vista',s), nav=$('.nav',s);
+      ScrollTrigger.create({trigger:s,start:'top 60%',end:'bottom 40%',onToggle:function(st){ if(st.isActive) gsap.to(calle,{backgroundColor:bg,color:fg,duration:.8,ease:'power2.out'}) }});
+      gsap.fromTo(img,{y:0},{y:function(){return -(img.clientHeight-vista.clientHeight)},ease:'none',scrollTrigger:{trigger:vista,start:'top 85%',end:'bottom 15%',scrub:.4,invalidateOnRefresh:true}});
+      gsap.fromTo(nav,{rotationX:16,transformPerspective:900,scale:.92},{rotationX:0,scale:1,ease:'none',scrollTrigger:{trigger:nav,start:'top 100%',end:'top 55%',scrub:.6}});
+    });
+    ScrollTrigger.create({trigger:'#calle',start:'top 60%',onLeaveBack:function(){ gsap.to(calle,{backgroundColor:'#F1F0EB',color:'#16212B',duration:.5}) }});
+
+    /* fachada: se encienden las ventanas y entramos por la primera */
+    gsap.timeline({scrollTrigger:{trigger:'#fachada',start:'top top',end:'+=110%',pin:true,scrub:.6}})
+      .to('#vanos .w',{attr:{class:'w lit'},stagger:{each:.04,from:'random'},duration:.01},0)
+      .to('.fachada-intro .txt',{opacity:0,y:-50,duration:.3},.25)
+      .to('#alzado',{scale:10,transformOrigin:'15% 41%',duration:1,ease:'power3.in'},.3)
+      .to('#cortina',{opacity:1,duration:.2},1.05);
+
+    /* las seis webs, una tras otra: el fondo se funde al color de cada marca */
+    var fach=$('.fachada');
+    $$('.panel').forEach(function(p){
+      var cs=getComputedStyle(p), bg=cs.getPropertyValue('--bg').trim();
+      var img=$('img.larga',p), vista=$('.vista',p), nav=$('.nav',p);
+      ScrollTrigger.create({trigger:p,start:'top 55%',end:'bottom 45%',onToggle:function(st){ if(st.isActive) gsap.to(fach,{backgroundColor:bg,duration:.8,ease:'power2.out'}) }});
+      gsap.from($('.txt',p).children,{y:36,opacity:0,stagger:.07,duration:.7,ease:ease,scrollTrigger:{trigger:p,start:'top 70%',toggleActions:'play none none reverse'}});
+      gsap.fromTo(img,{y:0},{y:function(){return -(img.clientHeight-vista.clientHeight)},ease:'none',scrollTrigger:{trigger:vista,start:'top 85%',end:'bottom 15%',scrub:.4,invalidateOnRefresh:true}});
+      gsap.fromTo(nav,{rotationY:-14,transformPerspective:1000,x:30},{rotationY:0,x:0,ease:'none',scrollTrigger:{trigger:nav,start:'top 100%',end:'top 55%',scrub:.6}});
+      gsap.fromTo($('.glow',p),{yPercent:-20},{yPercent:30,ease:'none',scrollTrigger:{trigger:p,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+
+    /* cubierta: se encienden las luces de la ciudad */
+    gsap.to('#luces .w',{attr:{class:'w lit'},stagger:{each:.09,from:'random'},duration:.01,scrollTrigger:{trigger:'#cubierta',start:'top 60%'}});
+    gsap.from('#cubierta .wrap > *',{y:40,opacity:0,stagger:.12,duration:.9,ease:ease,scrollTrigger:{trigger:'#cubierta',start:'top 60%'}});
+
+    /* ascensor */
+    [['#hero',''],['#sotano','sotano'],['#rasante','calle'],['#calle','calle'],['#fachada','fachada'],['.fachada','fachada'],['.mas','fachada'],['#cubierta','cubierta']].forEach(function(z){
+      var el=$(z[0]), sp=el.parentElement.classList.contains('pin-spacer')?el.parentElement:el;
+      ScrollTrigger.create({trigger:sp,start:'top 50%',end:'bottom 50%',onToggle:function(s){ if(s.isActive) planta(z[1]) }});
+    });
+    addEventListener('load',function(){ ScrollTrigger.refresh() });
+  }
+})();
+</script>
+</body>
+</html>
